@@ -51,7 +51,7 @@ class CampoMinado:
     def iniciar_interface(self):
         # Configuração inicial da janela do jogo
         self.janela = tk.Tk()
-        self.janela.title("Campo Minado")
+        self.janela.title("Campo Minado - Senac")
         
         # Configura o estilo da janela
         self.janela.configure(bg='#f0f0f0')
@@ -59,6 +59,28 @@ class CampoMinado:
         # Frame principal centralizado
         frame_principal = tk.Frame(self.janela, bg='#f0f0f0')
         frame_principal.pack(expand=True, padx=20, pady=20)
+
+        frame_secundario = tk.Frame(self.janela, bg='#f0f0f0')
+        frame_secundario.pack(expand=True, padx=10, pady=10)
+
+        # Adiciona um título estilizado
+        titulo = tk.Label(frame_principal, 
+                         text="CAMPO MINADO", 
+                         font=('Arial', 20, 'bold'),
+                         bg='#f0f0f0',
+                         fg='#2c3e50',
+                         pady=10)
+        
+        titulo2 = tk.Label(frame_secundario, 
+                         text="Bem-vindo ao Campo Minado! \n\n"
+                              "Objetivo: Descobrir todas as celulas sem bombas.\n\n"
+                              "Dica: Cada celula tem uma quantidade de bombas vizinhas.\n\n",
+                         font=('Arial', 10, 'bold'),     
+                         bg = '#f0f0f0',
+                         fg = '#2c3e50')
+    
+        titulo.pack()
+        titulo2.pack()
 
         # Frame para informações do jogo
         frame_info = tk.Frame(frame_principal, bg='#f0f0f0')
